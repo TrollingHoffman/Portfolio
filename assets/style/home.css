@@ -82,16 +82,9 @@ body.dark-mode .animated-gradient {
     z-index: 1;
 }
 
-.content {
+.hero-text {
     flex: 1;
     max-width: 700px;
-}
-
-.info h1 {
-    font-size: 24px;
-    color: var(--text-secondary);
-    margin-bottom: var(--spacing-sm);
-    font-weight: 400;
 }
 
 .gradient-text {
@@ -113,10 +106,6 @@ body.dark-mode .animated-gradient {
     50% {
         background-position: 100% 50%;
     }
-}
-
-.title-container {
-    margin: var(--spacing-md) 0;
 }
 
 .animated-title {
@@ -208,56 +197,77 @@ body.dark-mode .animated-gradient {
     font-weight: 500;
 }
 
-/* Person Image - Enhanced */
+/* Person Image - תיקון מלא עם fallback */
 .person-img {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 500px;
+    /* תמיד יוצג בכל הגדלים */
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .image-wrapper {
     position: relative;
     width: 100%;
     max-width: 400px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.glow-effect {
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    right: -20px;
-    bottom: -20px;
-    background: linear-gradient(135deg, var(--accent-color), var(--highlight-color));
-    border-radius: var(--radius-xl);
-    opacity: 0.2;
-    filter: blur(40px);
-    animation: pulse 3s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-        opacity: 0.2;
-    }
-    50% {
-        transform: scale(1.05);
-        opacity: 0.3;
-    }
-}
-
-.image-wrapper img {
+/* התמונה עצמה */
+.profile-image {
     width: 100%;
+    height: auto;
     border-radius: var(--radius-xl);
     border: 3px solid var(--border-color);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
     position: relative;
-    z-index: 1;
+    z-index: 2;
     transition: all var(--transition-speed) var(--transition-curve);
+    display: block;
 }
 
-.image-wrapper:hover img {
+/* אם התמונה לא נטענת - נסתיר אותה */
+.profile-image:not([src]), 
+.profile-image[src=""],
+.profile-image[src*="404"] {
+    display: none;
+}
+
+/* Fallback - יוצג רק אם התמונה לא נטענה */
+.image-fallback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 120px;
+    font-weight: 800;
+    color: white;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: var(--radius-xl);
+    border: 3px solid var(--border-color);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* אם התמונה לא נטענה, נציג את ה-fallback */
+.image-wrapper:has(.profile-image:not([src])) .image-fallback,
+.image-wrapper:has(.profile-image[src=""]) .image-fallback,
+.image-wrapper:has(.profile-image[src*="404"]) .image-fallback {
+    display: flex;
+}
+
+/* Hover effect */
+.image-wrapper:hover .profile-image {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
 }
@@ -275,7 +285,7 @@ body.dark-mode .animated-gradient {
     gap: 8px;
     font-weight: 600;
     box-shadow: 0 10px 30px rgba(30, 136, 229, 0.4);
-    z-index: 2;
+    z-index: 3;
     animation: float-badge 3s ease-in-out infinite;
 }
 
@@ -680,12 +690,21 @@ body.dark-mode .animated-gradient {
         gap: var(--spacing-md);
     }
 
+    /* תמונה במובייל - תמיד תוצג */
     .person-img {
         order: -1;
+        max-width: 100%;
+        width: 100%;
     }
 
     .image-wrapper {
         max-width: 300px;
+        min-height: 300px;
+        margin: 0 auto;
+    }
+
+    .image-fallback {
+        font-size: 80px;
     }
 
     .contact-grid {
@@ -736,6 +755,13 @@ body.dark-mode .animated-gradient {
 @media (min-width: 992px) {
     .hero {
         padding: 100px 0;
+    }
+    
+    /* תמונה בדסקטופ - תמיד תוצג */
+    .person-img {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 }
 

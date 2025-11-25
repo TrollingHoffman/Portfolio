@@ -1,9 +1,10 @@
 /* ====================================
-   CALCULATOR PAGE - MODERN DESIGN
+   CALCULATOR PAGE - FIXED SELECTORS
    ==================================== */
 
 /* Hero Section */
-.calc-hero {
+/* HTML Class: .hero-section */
+.hero-section {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-color) 100%);
     padding: var(--spacing-xxl) 0;
     position: relative;
@@ -23,7 +24,8 @@
     z-index: 0;
 }
 
-.hero-content-calc {
+/* HTML Class: .hero-content */
+.hero-content {
     text-align: center;
     color: white;
     position: relative;
@@ -32,37 +34,24 @@
     margin: 0 auto;
 }
 
-.hero-icon-large {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto var(--spacing-lg);
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: var(--radius-round);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(10px);
-}
-
-.hero-icon-large i {
-    font-size: 40px;
-}
-
-.calc-hero-title {
+/* HTML Class: .page-title */
+.page-title {
     font-size: 48px;
     font-weight: 800;
     margin-bottom: var(--spacing-md);
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.calc-hero-subtitle {
+/* HTML Class: .page-subtitle */
+.page-subtitle {
     font-size: 20px;
     line-height: 1.6;
     opacity: 0.95;
 }
 
 /* Services Showcase */
-.services-showcase {
+/* HTML Class: .services-grid-section */
+.services-grid-section {
     padding: var(--spacing-xxl) 0;
     background: var(--background-color);
     position: relative;
@@ -74,19 +63,17 @@
     margin-bottom: var(--spacing-xxl);
 }
 
-.section-title-modern {
+/* HTML Class: .section-title */
+.section-title {
     font-size: 42px;
     font-weight: 800;
     color: var(--text-color);
     margin-bottom: var(--spacing-sm);
+    text-align: center; /* Added to align with original design intent */
 }
 
-.section-subtitle-modern {
-    font-size: 18px;
-    color: var(--text-secondary);
-}
-
-.services-grid-modern {
+/* HTML Class: .services-grid */
+.services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: var(--spacing-lg);
@@ -94,7 +81,8 @@
     margin: 0 auto;
 }
 
-.service-card-modern {
+/* HTML Class: .service-card */
+.service-card {
     background: var(--card-background);
     border: 2px solid var(--border-color);
     border-radius: var(--radius-lg);
@@ -104,41 +92,14 @@
     overflow: hidden;
 }
 
-.service-card-modern:hover {
+.service-card:hover {
     transform: translateY(-8px);
     border-color: var(--accent-color);
     box-shadow: 0 15px 40px rgba(30, 136, 229, 0.2);
 }
 
-.service-card-modern.featured-service {
-    border-color: var(--accent-color);
-    border-width: 3px;
-}
-
-.featured-label {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: linear-gradient(135deg, var(--highlight-color), var(--accent-color));
-    color: white;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    z-index: 1;
-}
-
-.service-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: var(--spacing-lg);
-}
-
-.service-icon-modern {
+/* HTML Class: .service-icon */
+.service-icon {
     width: 60px;
     height: 60px;
     background: var(--icon-background);
@@ -148,38 +109,43 @@
     justify-content: center;
     color: white;
     font-size: 28px;
+    margin-bottom: var(--spacing-lg); /* Fixed alignment */
 }
 
-.service-price-badge {
+/* HTML Class: .service-price */
+.service-price {
     background: var(--success-color);
     color: white;
     padding: 8px 16px;
     border-radius: 20px;
     font-weight: 700;
     font-size: 18px;
+    display: inline-block;
+    margin-bottom: var(--spacing-sm);
 }
 
-.service-title-modern {
+.service-card h3 {
     font-size: 22px;
     font-weight: 700;
     color: var(--text-color);
     margin-bottom: var(--spacing-sm);
 }
 
-.service-desc-modern {
+.service-card p:not(.service-price) {
     font-size: 15px;
     color: var(--text-secondary);
     line-height: 1.6;
     margin-bottom: var(--spacing-lg);
 }
 
-.service-features-modern {
+/* HTML Class: .service-features */
+.service-features {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.service-features-modern li {
+.service-features li {
     padding: var(--spacing-xs) 0;
     color: var(--text-color);
     font-size: 14px;
@@ -188,38 +154,23 @@
     gap: var(--spacing-sm);
 }
 
-.service-features-modern i {
+.service-features i {
     color: var(--success-color);
     font-size: 16px;
     flex-shrink: 0;
 }
 
 /* Calculator Section */
-.calculator-modern {
+/* HTML Class: .calculator-section */
+.calculator-section {
     padding: var(--spacing-xxl) 0;
     background: var(--background-secondary);
     position: relative;
     z-index: 2;
 }
 
-.calc-intro {
-    text-align: center;
-    margin-bottom: var(--spacing-xxl);
-}
-
-.calc-main-title {
-    font-size: 42px;
-    font-weight: 800;
-    color: var(--text-color);
-    margin-bottom: var(--spacing-sm);
-}
-
-.calc-main-subtitle {
-    font-size: 18px;
-    color: var(--text-secondary);
-}
-
-.calc-wrapper {
+/* HTML Class: .calculator-container */
+.calculator-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-xl);
@@ -228,36 +179,21 @@
 }
 
 /* Form Section */
-.calc-form-section {
-    position: relative;
-}
-
-.form-card {
+/* HTML Class: .calculator-form */
+.calculator-form {
     background: var(--card-background);
     border: 2px solid var(--border-color);
     border-radius: var(--radius-lg);
     padding: var(--spacing-xl);
 }
 
-.form-card-title {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--text-color);
-    margin-bottom: var(--spacing-xl);
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-}
-
-.form-card-title i {
-    color: var(--accent-color);
-}
-
-.form-group-modern {
+/* HTML Class: .form-group */
+.form-group {
     margin-bottom: var(--spacing-xl);
 }
 
-.form-label-modern {
+/* Labels inside form group */
+.form-group label:not(.checkbox-label):not(.radio-label) {
     display: flex;
     align-items: center;
     gap: var(--spacing-xs);
@@ -267,11 +203,8 @@
     font-size: 16px;
 }
 
-.form-label-modern i {
-    color: var(--accent-color);
-}
-
-.form-select-modern {
+/* HTML Class: .form-control (Select) */
+.form-control {
     width: 100%;
     padding: 14px 16px;
     border: 2px solid var(--border-color);
@@ -284,20 +217,22 @@
     cursor: pointer;
 }
 
-.form-select-modern:focus {
+.form-control:focus {
     outline: none;
     border-color: var(--accent-color);
     box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.1);
 }
 
-/* Addon Options */
-.addon-options {
+/* Addon Options - Checkboxes */
+/* HTML Class: .checkbox-group */
+.checkbox-group {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
 }
 
-.addon-checkbox {
+/* HTML Class: .checkbox-label */
+.checkbox-label {
     display: flex;
     align-items: center;
     padding: var(--spacing-md);
@@ -308,18 +243,19 @@
     position: relative;
 }
 
-.addon-checkbox:hover {
+.checkbox-label:hover {
     border-color: var(--accent-color);
     background: rgba(30, 136, 229, 0.05);
 }
 
-.addon-checkbox input[type="checkbox"] {
+.checkbox-label input[type="checkbox"] {
     position: absolute;
     opacity: 0;
     cursor: pointer;
 }
 
-.addon-checkmark {
+/* HTML Class: .checkbox-custom */
+.checkbox-custom {
     width: 24px;
     height: 24px;
     border: 2px solid var(--border-color);
@@ -332,123 +268,119 @@
     flex-shrink: 0;
 }
 
-.addon-checkmark i {
+/* Creating the checkmark effect for the custom span */
+.checkbox-custom::after {
+    content: '\f00c'; /* FontAwesome Check */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
     font-size: 14px;
     color: white;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 
-.addon-checkbox input:checked ~ .addon-checkmark {
+.checkbox-label input:checked ~ .checkbox-custom {
     background: var(--accent-color);
     border-color: var(--accent-color);
 }
 
-.addon-checkbox input:checked ~ .addon-checkmark i {
+.checkbox-label input:checked ~ .checkbox-custom::after {
     opacity: 1;
 }
 
-.addon-content {
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--spacing-sm);
-}
-
-.addon-name {
+/* HTML Class: .checkbox-text */
+.checkbox-text {
     font-weight: 600;
     color: var(--text-color);
     font-size: 15px;
 }
 
-.addon-price {
-    font-weight: 700;
-    color: var(--accent-color);
-    font-size: 15px;
-    white-space: nowrap;
-}
-
-/* Timeline Options */
-.timeline-options {
+/* Timeline Options - Radio Buttons */
+/* HTML Class: .radio-group */
+.radio-group {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
 }
 
-.timeline-radio {
+/* HTML Class: .radio-label */
+.radio-label {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-md);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
     cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-.timeline-radio input[type="radio"] {
+.radio-label:hover {
+    border-color: var(--accent-color);
+}
+
+.radio-label input[type="radio"] {
     position: absolute;
     opacity: 0;
 }
 
-.timeline-card {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-md);
-    padding: var(--spacing-md);
-    border: 2px solid var(--border-color);
-    border-radius: var(--radius-md);
-    transition: all 0.3s ease;
+/* Styling the active state when radio is checked */
+.radio-label input:checked + .radio-custom {
+    /* Using sibling selector logic from HTML structure */
 }
 
-.timeline-radio input:checked ~ .timeline-card {
+/* We need to target the label itself when the input inside is checked. 
+   CSS :has() is modern but let's stick to standard. 
+   In your HTML, input is inside label. We can't style parent based on child easily without :has.
+   Instead, we style the internal elements. */
+   
+.radio-label:has(input:checked) {
     border-color: var(--accent-color);
     background: rgba(30, 136, 229, 0.05);
 }
 
-.timeline-card:hover {
+/* Fallback visualization for radio custom circle */
+.radio-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    margin-right: var(--spacing-sm);
+    position: relative;
+}
+
+.radio-label input:checked ~ .radio-custom {
     border-color: var(--accent-color);
 }
 
-.timeline-icon {
-    width: 40px;
-    height: 40px;
-    background: var(--icon-background);
-    border-radius: var(--radius-md);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 18px;
-    flex-shrink: 0;
+.radio-label input:checked ~ .radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: var(--accent-color);
+    border-radius: 50%;
 }
 
-.timeline-info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.timeline-name {
+.radio-text {
     font-weight: 700;
     color: var(--text-color);
     font-size: 16px;
 }
 
-.timeline-duration {
-    font-size: 13px;
-    color: var(--text-secondary);
-}
-
-.timeline-price {
-    font-weight: 700;
-    color: var(--accent-color);
-    font-size: 15px;
-    white-space: nowrap;
-}
-
 /* Form Actions */
-.form-actions-modern {
+/* HTML Class: .form-actions */
+.form-actions {
     display: flex;
     gap: var(--spacing-md);
     margin-top: var(--spacing-xl);
 }
 
-.btn-calculate {
+/* HTML Class: .btn-primary (Calculate) */
+.btn-primary {
     flex: 1;
     padding: 16px;
     background: linear-gradient(135deg, var(--accent-color), var(--highlight-color));
@@ -465,12 +397,13 @@
     gap: var(--spacing-sm);
 }
 
-.btn-calculate:hover {
+.btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(30, 136, 229, 0.4);
 }
 
-.btn-reset {
+/* HTML Class: .btn-secondary (Reset) */
+.btn-secondary {
     padding: 16px 24px;
     background: transparent;
     color: var(--text-secondary);
@@ -485,24 +418,21 @@
     gap: var(--spacing-xs);
 }
 
-.btn-reset:hover {
+.btn-secondary:hover {
     border-color: var(--accent-color);
     color: var(--accent-color);
 }
 
 /* Result Section */
-.calc-result-section {
-    position: relative;
-}
-
-.result-card {
+/* HTML Class: .calculator-result */
+.calculator-result {
     background: var(--card-background);
     border: 2px solid var(--border-color);
     border-radius: var(--radius-lg);
     padding: var(--spacing-xl);
 }
 
-.result-card-title {
+.calculator-result h3 {
     font-size: 24px;
     font-weight: 700;
     color: var(--text-color);
@@ -512,32 +442,29 @@
     gap: var(--spacing-sm);
 }
 
-.result-card-title i {
-    color: var(--accent-color);
-}
-
-.result-items {
+/* HTML Class: .result-summary */
+.result-summary {
     margin-bottom: var(--spacing-xl);
     min-height: 150px;
 }
 
-.empty-state {
+.empty-message {
     text-align: center;
     padding: var(--spacing-xl) var(--spacing-lg);
     color: var(--text-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.empty-state i {
+.empty-message i {
     font-size: 48px;
     margin-bottom: var(--spacing-md);
     color: var(--accent-color);
     opacity: 0.5;
 }
 
-.empty-state p {
-    font-size: 15px;
-}
-
+/* Styles for dynamically added result items (assumed based on JS logic implied) */
 .result-item {
     display: flex;
     justify-content: space-between;
@@ -549,33 +476,14 @@
     border-left: 4px solid var(--accent-color);
 }
 
-.result-item-name {
-    font-weight: 600;
-    color: var(--text-color);
-    font-size: 15px;
-}
-
-.result-item-price {
-    font-weight: 700;
-    color: var(--accent-color);
-    font-size: 16px;
-}
-
-.result-total-section {
+/* HTML Class: .result-total */
+.result-total {
     margin-top: var(--spacing-xl);
-}
-
-.total-line {
-    height: 2px;
-    background: var(--border-color);
-    margin-bottom: var(--spacing-lg);
-}
-
-.total-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: var(--spacing-md) 0;
+    border-top: 2px solid var(--border-color);
 }
 
 .total-label {
@@ -584,7 +492,8 @@
     color: var(--text-color);
 }
 
-.total-amount {
+/* HTML ID: #total-price (styled as class for consistency) */
+.total-value {
     font-size: 32px;
     font-weight: 800;
     background: linear-gradient(135deg, var(--accent-color), var(--highlight-color));
@@ -593,7 +502,8 @@
     background-clip: text;
 }
 
-.btn-get-quote {
+/* HTML Class: .btn-success (Get Quote) */
+.btn-success {
     width: 100%;
     padding: 16px;
     background: var(--success-color);
@@ -611,13 +521,14 @@
     margin-top: var(--spacing-lg);
 }
 
-.btn-get-quote:hover {
+.btn-success:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0, 200, 83, 0.4);
 }
 
 /* Special Notice */
-.special-notice-modern {
+/* HTML Class: .special-notice */
+.special-notice {
     margin-top: var(--spacing-xl);
     padding: var(--spacing-lg);
     background: linear-gradient(135deg, rgba(30, 136, 229, 0.1), rgba(0, 217, 255, 0.1));
@@ -626,7 +537,7 @@
     text-align: center;
 }
 
-.notice-icon-modern {
+.notice-icon {
     width: 50px;
     height: 50px;
     margin: 0 auto var(--spacing-md);
@@ -639,21 +550,21 @@
     font-size: 24px;
 }
 
-.special-notice-modern h4 {
+.special-notice h4 {
     font-size: 18px;
     font-weight: 700;
     color: var(--text-color);
     margin-bottom: var(--spacing-sm);
 }
 
-.special-notice-modern p {
+.special-notice p {
     font-size: 14px;
     color: var(--text-secondary);
     margin-bottom: var(--spacing-lg);
     line-height: 1.6;
 }
 
-.btn-whatsapp-notice {
+.btn-whatsapp-special {
     display: inline-flex;
     align-items: center;
     gap: var(--spacing-sm);
@@ -666,13 +577,14 @@
     transition: all 0.3s ease;
 }
 
-.btn-whatsapp-notice:hover {
+.btn-whatsapp-special:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
 }
 
 /* CTA Section */
-.cta-modern {
+/* HTML Class: .contact-cta */
+.contact-cta {
     padding: var(--spacing-xxl) 0;
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
@@ -680,49 +592,33 @@
     z-index: 2;
 }
 
-.cta-content-modern {
+.cta-content {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
 }
 
-.cta-icon-large {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto var(--spacing-lg);
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: var(--radius-round);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(10px);
-}
-
-.cta-icon-large i {
-    font-size: 40px;
-}
-
-.cta-title {
+.contact-cta h2 {
     font-size: 42px;
     font-weight: 800;
     margin-bottom: var(--spacing-md);
 }
 
-.cta-subtitle {
+.contact-cta p {
     font-size: 18px;
     line-height: 1.6;
     opacity: 0.95;
     margin-bottom: var(--spacing-xl);
 }
 
-.cta-buttons-modern {
+.cta-buttons {
     display: flex;
     gap: var(--spacing-md);
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.btn-cta {
+.btn-whatsapp, .btn-linkedin, .btn-email {
     padding: 16px 32px;
     border-radius: var(--radius-md);
     font-weight: 700;
@@ -735,19 +631,11 @@
     transition: all 0.3s ease;
 }
 
-.btn-cta.whatsapp {
-    background: #25D366;
-}
+.btn-whatsapp { background: #25D366; }
+.btn-linkedin { background: #0077B5; }
+.btn-email { background: #EA4335; }
 
-.btn-cta.linkedin {
-    background: #0077B5;
-}
-
-.btn-cta.email {
-    background: #EA4335;
-}
-
-.btn-cta:hover {
+.btn-whatsapp:hover, .btn-linkedin:hover, .btn-email:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
@@ -758,150 +646,116 @@
 
 /* Tablet */
 @media (max-width: 991px) {
-    .calc-wrapper {
+    .calculator-container {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
     }
 
-    .services-grid-modern {
+    .services-grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 
-    .calc-hero-title {
+    .page-title {
         font-size: 38px;
     }
 
-    .section-title-modern,
-    .calc-main-title,
-    .cta-title {
+    .section-title,
+    .contact-cta h2 {
         font-size: 36px;
     }
 }
 
 /* Mobile */
 @media (max-width: 767px) {
-    .calc-hero {
+    .hero-section {
         padding: var(--spacing-xl) 0;
     }
 
-    .calc-hero-title {
+    .page-title {
         font-size: 32px;
     }
 
-    .calc-hero-subtitle,
-    .cta-subtitle {
+    .page-subtitle,
+    .contact-cta p {
         font-size: 16px;
     }
 
-    .services-grid-modern {
+    .services-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
     }
 
-    .section-title-modern,
-    .calc-main-title,
-    .cta-title {
+    .section-title,
+    .contact-cta h2 {
         font-size: 28px;
     }
 
-    .form-card,
-    .result-card {
+    .calculator-form,
+    .calculator-result {
         padding: var(--spacing-lg);
     }
 
-    .form-actions-modern {
+    .form-actions {
         flex-direction: column;
     }
 
-    .btn-reset {
+    .btn-secondary {
         width: 100%;
         justify-content: center;
     }
 
-    .timeline-card {
+    .radio-label {
         gap: var(--spacing-sm);
     }
 
-    .timeline-icon {
-        width: 35px;
-        height: 35px;
-        font-size: 16px;
-    }
-
-    .timeline-name {
+    .radio-text {
         font-size: 14px;
     }
 
-    .timeline-duration {
-        font-size: 12px;
-    }
-
-    .timeline-price {
-        font-size: 14px;
-    }
-
-    .cta-buttons-modern {
+    .cta-buttons {
         flex-direction: column;
         gap: var(--spacing-sm);
     }
 
-    .btn-cta {
+    .btn-whatsapp, .btn-linkedin, .btn-email {
         width: 100%;
         justify-content: center;
     }
 
-    .total-amount {
+    .total-value {
         font-size: 28px;
     }
 
     .total-label {
         font-size: 18px;
     }
-
-    .addon-content {
-        flex-wrap: wrap;
-    }
-
-    .addon-price {
-        width: 100%;
-        text-align: left;
-        margin-top: 4px;
-    }
-
-    .service-title-modern {
-        font-size: 20px;
-    }
-
-    .service-desc-modern {
-        font-size: 14px;
-    }
 }
 
 /* Dark Mode Adjustments */
-body.dark-mode .service-card-modern {
+body.dark-mode .service-card {
     background: var(--dm-card-background);
     border-color: var(--dm-border);
 }
 
-body.dark-mode .form-card,
-body.dark-mode .result-card {
+body.dark-mode .calculator-form,
+body.dark-mode .calculator-result {
     background: var(--dm-card-background);
     border-color: var(--dm-border);
 }
 
-body.dark-mode .form-select-modern {
+body.dark-mode .form-control {
     background: var(--dm-background);
     border-color: var(--dm-border);
     color: var(--dm-text);
 }
 
-body.dark-mode .addon-checkbox,
-body.dark-mode .timeline-card {
+body.dark-mode .checkbox-label,
+body.dark-mode .radio-label {
     border-color: var(--dm-border);
 }
 
-body.dark-mode .addon-checkbox:hover,
-body.dark-mode .timeline-card:hover {
+body.dark-mode .checkbox-label:hover,
+body.dark-mode .radio-label:hover {
     background: rgba(0, 217, 255, 0.1);
 }
 

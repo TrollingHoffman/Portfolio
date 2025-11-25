@@ -1,161 +1,141 @@
-// Counter Animation for Stats
-function animateCounters() {
-    const counters = document.querySelectorAll('.counter');
+document.addEventListener('DOMContentLoaded', function() {
+    // מפעיל רק את האנימציות הייחודיות לדף הבית
+    // שאר האנימציות (מספרים רצים, גלילה וכו') מטופלות ב-scroll-animations.js
+    initHeroAnimations();
+    initParallax();
+});
+
+// אנימציית כניסה לשורות הכותרת (Data Analyst | Gen AI Explorer...)
+function initHeroAnimations() {
+    const titleLines = document.querySelectorAll('.title-line');
+    const heroDescription = document.querySelector('.hero-description');
+    const heroButtons = document.querySelector('.hero-buttons');
     
-    const observerOptions = {
-        threshold: 0.5,
-        rootMargin: '0px 0px -100px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const counter = entry.target;
-                const target = parseInt(counter.getAttribute('data-target'));
-                const duration = 2000; // 2 seconds
-                const increment = target / (duration / 16); // 60fps
-                let current = 0;
-                
-                const updateCounter = () => {
-                    current += increment;
-                    if (current < target) {
-                        counter.textContent = Math.ceil(current);
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        counter.textContent = target;
-                    }
-                };
-                
-                updateCounter();
-                observer.unobserve(counter);
-            }
+    // אנימציה לשורות הכותרת
+    if (titleLines.length > 0) {
+        titleLines.forEach((line, index) => {
+            // הגדרת מצב התחלתי
+            line.style.opacity = '0';
+            line.style.transform = 'translateY(20px)';
+            line.style.transition = 'all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)';
+            
+            // הפעלת האנימציה בדירוג
+            setTimeout(() => {
+                line.style.opacity = '1';
+                line.style.transform = 'translateY(0)';
+            }, 300 + (index * 200));
         });
-    }, observerOptions);
-    
-    counters.forEach(counter => observer.observe(counter));
+    }
+
+    // אנימציה לתיאור
+    if (heroDescription) {
+        heroDescription.style.opacity = '0';
+        heroDescription.style.transform = 'translateY(20px)';
+        heroDescription.style.transition = 'all 0.8s ease-out';
+        
+        setTimeout(() => {
+            heroDescription.style.opacity = '1';
+            heroDescription.style.transform = 'translateY(0)';
+        }, 1000);
+    }
+
+    // אנימציה לכפתורים
+    if (heroButtons) {
+        heroButtons.style.opacity = '0';
+        heroButtons.style.transform = 'translateY(20px)';
+        heroButtons.style.transition = 'all 0.8s ease-out';
+        
+        setTimeout(() => {
+            heroButtons.style.opacity = '1';
+            heroButtons.style.transform = 'translateY(0)';
+        }, 1200);
+    }
 }
 
-// Fade In Animation on Scroll
-function initScrollAnimations() {
-    const fadeElements = document.querySelectorAll('.fade-in');
+// אפקט פרלקס עדין לרקע של ה-Hero
+function initParallax() {
+    const heroSection = document.querySelector('.hero');
+    const heroContent = document.querySelector('.hero-content');
+    
+    if (!heroSection || window.innerWidth <= 768) return; // מבטל במובייל לביצועים טובים יותר
+    
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        
+        // מפעיל רק כשה-Hero גלוי במסך
+        if (scrolled < window.innerHeight) {
+            // מזיז את התוכן במהירות שונה מהרקע
+            if (heroContent) {
+                heroContent.style.transform = `translateY(${scrolled * 0.4}px)`;
+                heroContent.style.opacity = 1 - (scrolled / 700); // דוהה בגלילה למטה
+            }
+        }
+    });
+}
+// החלף את הפונקציה initCounterAnimations והפונקציה animateCounter הקיימות בזה:
+
+function initCounterAnimations() {
+    const statNumbers = document.querySelectorAll('.stat-number, .counter');
+    
+    // אם אין אלמנטים כאלו בדף, נעצור כאן כדי למנוע שגיאות
+    if (statNumbers.length === 0) return;
     
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.5
     };
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                const element = entry.target;
+                
+                // --- התיקון: קריאה מתוך data-target ---
+                // ננסה לקחת את המספר מתוך המאפיין data-target
+                const targetAttr = element.getAttribute('data-target');
+                
+                // אם אין data-target, ננסה לקחת מהטקסט (גיבוי)
+                let target = targetAttr ? parseInt(targetAttr) : 0;
+                
+                // אם עדיין 0, ננסה לחלץ מספרים מהטקסט (למקרה שכתוב "50 projects")
+                if (target === 0) {
+                    const text = element.textContent.trim();
+                    const match = text.match(/\d+/);
+                    if (match) target = parseInt(match[0]);
+                }
+
+                if (target > 0) {
+                    animateCounter(element, target);
+                    observer.unobserve(element);
+                }
             }
         });
     }, observerOptions);
     
-    fadeElements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
-        element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+    statNumbers.forEach(element => {
         observer.observe(element);
     });
 }
 
-// Smooth Scroll for Anchor Links
-function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href === '#' || href === '') return;
-            
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                const headerOffset = 100;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-}
-
-// Header Scroll Effect
-function initHeaderScroll() {
-    const header = document.querySelector('header');
-    let lastScroll = 0;
+function animateCounter(element, target) {
+    const duration = 2000; // משך האנימציה במילישניות
+    const frameDuration = 1000 / 60; // 60 פריימים בשנייה
+    const totalFrames = Math.round(duration / frameDuration);
+    const easeOutQuad = t => t * (2 - t); // פונקציית האטה לקראת הסוף
     
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
+    let frame = 0;
+    
+    const counter = setInterval(() => {
+        frame++;
+        const progress = easeOutQuad(frame / totalFrames);
+        const currentCount = Math.round(target * progress);
         
-        if (currentScroll > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+        if (parseInt(element.textContent) !== currentCount) {
+            element.textContent = currentCount;
         }
         
-        lastScroll = currentScroll;
-    });
-}
-
-// Parallax Effect for Hero Section
-function initParallax() {
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
-    
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const parallaxSpeed = 0.5;
-        
-        if (scrolled < window.innerHeight) {
-            hero.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+        if (frame === totalFrames) {
+            clearInterval(counter);
+            element.textContent = target; // וידוא סופי
         }
-    });
+    }, frameDuration);
 }
-
-// Title Animation Effect
-function initTitleAnimation() {
-    const titleLines = document.querySelectorAll('.title-line');
-    
-    titleLines.forEach((line, index) => {
-        line.style.opacity = '0';
-        line.style.transform = 'translateX(-20px)';
-        
-        setTimeout(() => {
-            line.style.transition = 'all 0.5s ease-out';
-            line.style.opacity = '1';
-            line.style.transform = 'translateX(0)';
-        }, 100 * (index + 1));
-    });
-}
-
-// Initialize all animations when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    animateCounters();
-    initScrollAnimations();
-    initSmoothScroll();
-    initHeaderScroll();
-    initParallax();
-    
-    // Delay title animation slightly for better effect
-    setTimeout(initTitleAnimation, 300);
-});
-
-// Add hover effect to expertise cards
-document.addEventListener('DOMContentLoaded', () => {
-    const expertiseCards = document.querySelectorAll('.expertise-card');
-    
-    expertiseCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-        });
-    });
-});
