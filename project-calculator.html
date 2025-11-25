@@ -39,8 +39,7 @@
         <div class="hero-content">
           <h1 class="page-title">AI Services Calculator</h1>
           <p class="page-subtitle">
-            Get a personalized quote for your next project. Select the services you need,
-            and I'll help you transform your vision into reality.
+            Build your custom package. Select as many services as you need to get a personalized quote.
           </p>
         </div>
       </div>
@@ -52,90 +51,45 @@
         <div class="services-grid">
           
           <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-robot"></i>
-            </div>
+            <div class="service-icon"><i class="fas fa-robot"></i></div>
             <h3>AI Chatbot Development</h3>
             <p class="service-price">₪500</p>
-            <p>Custom AI-powered chatbot that understands natural language and provides intelligent support 24/7.</p>
-            <ul class="service-features">
-              <li><i class="fas fa-check"></i> Natural language processing</li>
-              <li><i class="fas fa-check"></i> Integration with existing systems</li>
-              <li><i class="fas fa-check"></i> Multi-language conversations</li>
-              <li><i class="fas fa-check"></i> Continuous learning</li>
-            </ul>
+            <p>Custom AI-powered chatbot 24/7 support.</p>
           </div>
 
           <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-briefcase"></i>
-            </div>
+            <div class="service-icon"><i class="fas fa-briefcase"></i></div>
             <h3>Business Development Plan</h3>
             <p class="service-price">₪1,000</p>
-            <p>Comprehensive business strategy and roadmap for sustainable growth and success.</p>
-            <ul class="service-features">
-              <li><i class="fas fa-check"></i> Market & competitor analysis</li>
-              <li><i class="fas fa-check"></i> Growth strategy</li>
-              <li><i class="fas fa-check"></i> Financial planning</li>
-              <li><i class="fas fa-check"></i> Implementation roadmap</li>
-            </ul>
+            <p>Comprehensive business strategy for growth.</p>
           </div>
 
           <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-chart-pie"></i>
-            </div>
-            <h3>Business Data Analysis & Insights</h3>
+            <div class="service-icon"><i class="fas fa-chart-pie"></i></div>
+            <h3>Business Data Analysis</h3>
             <p class="service-price">₪1,500</p>
-            <p>Comprehensive data analysis with actionable insights and data-driven business strategy plan.</p>
-            <ul class="service-features">
-              <li><i class="fas fa-check"></i> Deep data analysis</li>
-              <li><i class="fas fa-check"></i> Visual dashboards</li>
-              <li><i class="fas fa-check"></i> Strategic recommendations</li>
-              <li><i class="fas fa-check"></i> Implementation roadmap</li>
-            </ul>
+            <p>Deep analysis & strategic roadmap.</p>
           </div>
 
           <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-drone"></i>
-            </div>
-            <h3>Professional Drone Photography</h3>
+            <div class="service-icon"><i class="fas fa-drone"></i></div>
+            <h3>Drone Photography</h3>
             <p class="service-price">₪300</p>
-            <p>Stunning aerial photography and videography for real estate, events, and commercial projects.</p>
-            <ul class="service-features">
-              <li><i class="fas fa-check"></i> High-resolution photo & video</li>
-              <li><i class="fas fa-check"></i> Professional editing</li>
-              <li><i class="fas fa-check"></i> Aerial perspective shots</li>
-            </ul>
+            <p>High-res aerial photo & video.</p>
           </div>
 
           <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-chart-bar"></i>
-            </div>
-            <h3>Data Analysis & Insights</h3>
+            <div class="service-icon"><i class="fas fa-chart-bar"></i></div>
+            <h3>Data Analysis</h3>
             <p class="service-price">₪800</p>
-            <p>Transform your data into actionable insights with comprehensive reports and recommendations.</p>
-            <ul class="service-features">
-              <li><i class="fas fa-check"></i> Data cleaning & processing</li>
-              <li><i class="fas fa-check"></i> Statistical analysis</li>
-              <li><i class="fas fa-check"></i> Interactive reports</li>
-            </ul>
+            <p>Data cleaning & statistical analysis.</p>
           </div>
 
           <div class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-brain"></i>
-            </div>
+            <div class="service-icon"><i class="fas fa-brain"></i></div>
             <h3>AI Content Generation</h3>
             <p class="service-price">₪500</p>
-            <p>AI-powered content creation for marketing, social media, and business communications.</p>
-            <ul class="service-features">
-              <li><i class="fas fa-check"></i> Text & image generation</li>
-              <li><i class="fas fa-check"></i> Brand voice consistency</li>
-              <li><i class="fas fa-check"></i> SEO optimization</li>
-            </ul>
+            <p>Marketing content & automation.</p>
           </div>
 
         </div>
@@ -148,44 +102,72 @@
         <div class="calculator-container">
           
           <div class="calculator-form">
+            
             <div class="form-group">
-              <label for="primary-service">Select Primary Service</label>
-              <select id="primary-service" class="form-control">
-                <option value="">-- Choose your main service --</option>
-                <option value="chatbot" data-price="500">AI Chatbot Development (₪500)</option>
-                <option value="business-plan" data-price="1000">Business Development Plan (₪1,000)</option>
-                <option value="business-data" data-price="1500">Business Data Analysis & Insights (₪1,500)</option>
-                <option value="drone" data-price="300">Professional Drone Photography (₪300)</option>
-                <option value="data-analysis" data-price="800">Data Analysis & Insights (₪800)</option>
-                <option value="ai-content" data-price="500">AI Content Generation (₪500)</option>
-              </select>
-            </div>
+              <label><i class="fas fa-tasks"></i> Select Services</label>
+              <div class="checkbox-group services-list">
+                
+                <label class="checkbox-label">
+                  <input type="checkbox" class="service-checkbox" value="chatbot" data-price="500" data-name="AI Chatbot Development">
+                  <span class="checkbox-custom"></span>
+                  <span class="checkbox-text">AI Chatbot Development (₪500)</span>
+                </label>
 
-            <div class="form-group">
-              <label>Additional Services</label>
-              <div class="checkbox-group">
                 <label class="checkbox-label">
-                  <input type="checkbox" id="add-lecture" data-price="250">
+                  <input type="checkbox" class="service-checkbox" value="business-plan" data-price="1000" data-name="Business Development Plan">
                   <span class="checkbox-custom"></span>
-                  <span class="checkbox-text">Generative AI Lecture (₪250)</span>
+                  <span class="checkbox-text">Business Development Plan (₪1,000)</span>
                 </label>
-                
+
                 <label class="checkbox-label">
-                  <input type="checkbox" id="add-maintenance" data-price="500">
+                  <input type="checkbox" class="service-checkbox" value="business-data" data-price="1500" data-name="Business Data Analysis">
                   <span class="checkbox-custom"></span>
-                  <span class="checkbox-text">Monthly Maintenance (₪500/mo)</span>
+                  <span class="checkbox-text">Business Data Analysis & Insights (₪1,500)</span>
                 </label>
-                
+
                 <label class="checkbox-label">
-                  <input type="checkbox" id="add-website" data-price="300">
+                  <input type="checkbox" class="service-checkbox" value="data-analysis" data-price="800" data-name="Data Analysis">
+                  <span class="checkbox-custom"></span>
+                  <span class="checkbox-text">Data Analysis & Insights (₪800)</span>
+                </label>
+
+                <label class="checkbox-label">
+                  <input type="checkbox" class="service-checkbox" value="ai-content" data-price="500" data-name="AI Content Generation">
+                  <span class="checkbox-custom"></span>
+                  <span class="checkbox-text">AI Content Generation (₪500)</span>
+                </label>
+
+                <label class="checkbox-label">
+                  <input type="checkbox" class="service-checkbox" value="drone" data-price="300" data-name="Drone Photography">
+                  <span class="checkbox-custom"></span>
+                  <span class="checkbox-text">Professional Drone Photography (₪300)</span>
+                </label>
+
+                <div class="divider-line" style="margin: 10px 0; border-top: 1px solid var(--border-color);"></div>
+
+                <label class="checkbox-label">
+                  <input type="checkbox" class="service-checkbox" value="website" data-price="300" data-name="Business Website Development">
                   <span class="checkbox-custom"></span>
                   <span class="checkbox-text">Business Website Development (₪300)</span>
                 </label>
+
+                <label class="checkbox-label">
+                  <input type="checkbox" class="service-checkbox" value="lecture" data-price="250" data-name="Generative AI Lecture">
+                  <span class="checkbox-custom"></span>
+                  <span class="checkbox-text">Generative AI Lecture (₪250)</span>
+                </label>
+
+                <label class="checkbox-label">
+                  <input type="checkbox" class="service-checkbox" value="maintenance" data-price="500" data-name="Monthly Maintenance">
+                  <span class="checkbox-custom"></span>
+                  <span class="checkbox-text">Monthly Maintenance (₪500)</span>
+                </label>
+
               </div>
             </div>
 
             <div class="form-group">
-              <label>Project Timeline</label>
+              <label><i class="fas fa-clock"></i> Project Timeline</label>
               <div class="radio-group">
                 <label class="radio-label">
                   <input type="radio" name="timeline" id="timeline-standard" value="standard" data-price="0" checked>
@@ -258,13 +240,10 @@
       <div class="container">
         <div class="cta-content">
           <h2>Ready to Get Started?</h2>
-          <p>Let's create something amazing together. Get in touch now and let's discuss your project.</p>
+          <p>Let's create something amazing together.</p>
           <div class="cta-buttons">
             <a href="https://wa.me/972503000184" target="_blank" class="btn btn-whatsapp">
               <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
-            <a href="https://linkedin.com/in/amit-hoffman" target="_blank" class="btn btn-linkedin">
-              <i class="fab fa-linkedin"></i> LinkedIn
             </a>
             <a href="mailto:Amithoffman56@gmail.com" class="btn btn-email">
               <i class="fas fa-envelope"></i> Email
