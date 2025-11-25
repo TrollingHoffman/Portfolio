@@ -34,7 +34,6 @@
   </header>
 
   <main>
-    <!-- Hero Section -->
     <section class="hero-section">
       <div class="container">
         <div class="hero-content">
@@ -47,7 +46,6 @@
       </div>
     </section>
 
-    <!-- Services Grid -->
     <section class="services-grid-section">
       <div class="container">
         <h2 class="section-title">My Services</h2>
@@ -58,7 +56,7 @@
               <i class="fas fa-robot"></i>
             </div>
             <h3>AI Chatbot Development</h3>
-            <p class="service-price">$2,500</p>
+            <p class="service-price">₪500</p>
             <p>Custom AI-powered chatbot that understands natural language and provides intelligent support 24/7.</p>
             <ul class="service-features">
               <li><i class="fas fa-check"></i> Natural language processing</li>
@@ -73,7 +71,7 @@
               <i class="fas fa-briefcase"></i>
             </div>
             <h3>Business Development Plan</h3>
-            <p class="service-price">$1,800</p>
+            <p class="service-price">₪1,000</p>
             <p>Comprehensive business strategy and roadmap for sustainable growth and success.</p>
             <ul class="service-features">
               <li><i class="fas fa-check"></i> Market & competitor analysis</li>
@@ -88,7 +86,7 @@
               <i class="fas fa-chart-pie"></i>
             </div>
             <h3>Business Data Analysis & Insights</h3>
-            <p class="service-price">$2,200</p>
+            <p class="service-price">₪1,500</p>
             <p>Comprehensive data analysis with actionable insights and data-driven business strategy plan.</p>
             <ul class="service-features">
               <li><i class="fas fa-check"></i> Deep data analysis</li>
@@ -103,7 +101,7 @@
               <i class="fas fa-drone"></i>
             </div>
             <h3>Professional Drone Photography</h3>
-            <p class="service-price">$800</p>
+            <p class="service-price">₪300</p>
             <p>Stunning aerial photography and videography for real estate, events, and commercial projects.</p>
             <ul class="service-features">
               <li><i class="fas fa-check"></i> High-resolution photo & video</li>
@@ -117,7 +115,7 @@
               <i class="fas fa-chart-bar"></i>
             </div>
             <h3>Data Analysis & Insights</h3>
-            <p class="service-price">$1,200</p>
+            <p class="service-price">₪800</p>
             <p>Transform your data into actionable insights with comprehensive reports and recommendations.</p>
             <ul class="service-features">
               <li><i class="fas fa-check"></i> Data cleaning & processing</li>
@@ -131,7 +129,7 @@
               <i class="fas fa-brain"></i>
             </div>
             <h3>AI Content Generation</h3>
-            <p class="service-price">$600</p>
+            <p class="service-price">₪500</p>
             <p>AI-powered content creation for marketing, social media, and business communications.</p>
             <ul class="service-features">
               <li><i class="fas fa-check"></i> Text & image generation</li>
@@ -144,7 +142,6 @@
       </div>
     </section>
 
-    <!-- Calculator Section -->
     <section class="calculator-section">
       <div class="container">
         <h2 class="section-title">Calculate Your Project</h2>
@@ -155,12 +152,12 @@
               <label for="primary-service">Select Primary Service</label>
               <select id="primary-service" class="form-control">
                 <option value="">-- Choose your main service --</option>
-                <option value="chatbot" data-price="2500">AI Chatbot Development ($2,500)</option>
-                <option value="business-plan" data-price="1800">Business Development Plan ($1,800)</option>
-                <option value="business-data" data-price="2200">Business Data Analysis & Insights ($2,200)</option>
-                <option value="drone" data-price="800">Professional Drone Photography ($800)</option>
-                <option value="data-analysis" data-price="1200">Data Analysis & Insights ($1,200)</option>
-                <option value="ai-content" data-price="600">AI Content Generation ($600)</option>
+                <option value="chatbot" data-price="500">AI Chatbot Development (₪500)</option>
+                <option value="business-plan" data-price="1000">Business Development Plan (₪1,000)</option>
+                <option value="business-data" data-price="1500">Business Data Analysis & Insights (₪1,500)</option>
+                <option value="drone" data-price="300">Professional Drone Photography (₪300)</option>
+                <option value="data-analysis" data-price="800">Data Analysis & Insights (₪800)</option>
+                <option value="ai-content" data-price="500">AI Content Generation (₪500)</option>
               </select>
             </div>
 
@@ -168,19 +165,21 @@
               <label>Additional Services</label>
               <div class="checkbox-group">
                 <label class="checkbox-label">
-                  <input type="checkbox" id="add-training" data-price="400">
+                  <input type="checkbox" id="add-lecture" data-price="250">
                   <span class="checkbox-custom"></span>
-                  <span class="checkbox-text">Team Training ($400)</span>
+                  <span class="checkbox-text">Generative AI Lecture (₪250)</span>
                 </label>
+                
                 <label class="checkbox-label">
-                  <input type="checkbox" id="add-maintenance" data-price="200">
+                  <input type="checkbox" id="add-maintenance" data-price="500">
                   <span class="checkbox-custom"></span>
-                  <span class="checkbox-text">Monthly Maintenance ($200/mo)</span>
+                  <span class="checkbox-text">Monthly Maintenance (₪500/mo)</span>
                 </label>
+                
                 <label class="checkbox-label">
-                  <input type="checkbox" id="add-integration" data-price="600">
+                  <input type="checkbox" id="add-website" data-price="300">
                   <span class="checkbox-custom"></span>
-                  <span class="checkbox-text">System Integration ($600)</span>
+                  <span class="checkbox-text">Business Website Development (₪300)</span>
                 </label>
               </div>
             </div>
@@ -189,19 +188,19 @@
               <label>Project Timeline</label>
               <div class="radio-group">
                 <label class="radio-label">
-                  <input type="radio" name="timeline" id="timeline-standard" value="standard" checked>
+                  <input type="radio" name="timeline" id="timeline-standard" value="standard" data-price="0" checked>
                   <span class="radio-custom"></span>
                   <span class="radio-text">Standard (4-6 weeks) - No extra cost</span>
                 </label>
                 <label class="radio-label">
-                  <input type="radio" name="timeline" id="timeline-fast" value="fast">
+                  <input type="radio" name="timeline" id="timeline-fast" value="fast" data-price="500">
                   <span class="radio-custom"></span>
-                  <span class="radio-text">Fast Track (2-3 weeks) - +$500</span>
+                  <span class="radio-text">Fast Track (2-3 weeks) - +₪500</span>
                 </label>
                 <label class="radio-label">
-                  <input type="radio" name="timeline" id="timeline-express" value="express">
+                  <input type="radio" name="timeline" id="timeline-express" value="express" data-price="1000">
                   <span class="radio-custom"></span>
-                  <span class="radio-text">Express (1 week) - +$1,000</span>
+                  <span class="radio-text">Express (1 week) - +₪1,000</span>
                 </label>
               </div>
             </div>
@@ -226,7 +225,7 @@
             </div>
             <div class="result-total">
               <span class="total-label">Estimated Total:</span>
-              <span class="total-value" id="total-price">$0</span>
+              <span class="total-value" id="total-price">₪0</span>
             </div>
             <div class="result-actions">
               <button class="btn btn-success" id="get-quote-btn" style="display: none;">
@@ -234,7 +233,6 @@
               </button>
             </div>
             
-            <!-- Special message for Business Data Analysis -->
             <div class="special-notice" id="business-data-notice" style="display: none;">
               <div class="notice-3d-card">
                 <div class="notice-icon">
@@ -256,7 +254,6 @@
       </div>
     </section>
 
-    <!-- Contact CTA -->
     <section class="contact-cta">
       <div class="container">
         <div class="cta-content">
