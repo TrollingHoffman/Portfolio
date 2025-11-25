@@ -1,0 +1,73 @@
+:root {
+    /* Modern Professional Color Palette */
+    --primary-color: #0A2463;
+    --secondary-color: #3E92CC;
+    --accent-color: #1E88E5;
+    --highlight-color: #00D9FF;
+    --success-color: #00C853;
+    --light-color: #F8F9FA;
+    --text-color: #1A1A1A;
+    --text-secondary: #555555;
+    --background-color: #FFFFFF;
+    --background-secondary: #F5F7FA;
+    --hero-background: linear-gradient(135deg, #0A2463 0%, #3E92CC 100%);
+    --header-background: rgba(10, 36, 99, 0.95);
+    --footer-background: #0A2463;
+    --border-color: #E0E4E8;
+    --button-background: linear-gradient(135deg, #1E88E5 0%, #00D9FF 100%);
+    --button-text: #FFFFFF;
+    --card-background: #FFFFFF;
+    --card-hover-shadow: 0 20px 60px rgba(30, 136, 229, 0.25);
+    --icon-background: linear-gradient(135deg, #3E92CC 0%, #00D9FF 100%);
+    
+    /* Animation & Effects */
+    --transition-speed: 0.3s;
+    --transition-curve: cubic-bezier(0.4, 0, 0.2, 1);
+    --glow-effect: 0 0 20px rgba(0, 217, 255, 0.5);
+    
+    /* Spacing */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+    --spacing-xl: 48px;
+    --spacing-xxl: 64px;
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 30px;
+    --radius-round: 50%;
+}
+
+body.dark-mode {
+    /* Dark Mode Professional Colors */
+    --primary-color: #00D9FF;
+    --secondary-color: #3E92CC;
+    --accent-color: #00D9FF;
+    --highlight-color: #1E88E5;
+    --success-color: #00E676;
+    --light-color: #F8F9FA;
+    --text-color: #E8E8E8;
+    --text-secondary: #B0B0B0;
+    --background-color: #0D1117;
+    --background-secondary: #161B22;
+    --hero-background: linear-gradient(135deg, #0D1117 0%, #1A1F2E 100%);
+    --header-background: rgba(13, 17, 23, 0.95);
+    --footer-background: #0D1117;
+    --border-color: #30363D;
+    --button-background: linear-gradient(135deg, #00D9FF 0%, #1E88E5 100%);
+    --button-text: #0D1117;
+    --card-background: #161B22;
+    --card-hover-shadow: 0 20px 60px rgba(0, 217, 255, 0.3);
+    --icon-background: linear-gradient(135deg, #00D9FF 0%, #1E88E5 100%);
+    --glow-effect: 0 0 20px rgba(0, 217, 255, 0.6);
+}
+
+/* Smooth transitions for dark mode */
+* {
+    transition: background-color var(--transition-speed) var(--transition-curve),
+                color var(--transition-speed) var(--transition-curve),
+                border-color var(--transition-speed) var(--transition-curve);
+}

@@ -1,0 +1,6 @@
+כדי לבנות את ה-GitHub Pages
+כפי שצריך, יש לוודא כי הקישורים שמצרפים נראים בערך כמו שצירפתי רק לפי הצורך שלכם.
+
+<script defer src="services/global.js"></script>
+<link rel="stylesheet" href="assets/style/global.css" type=“text/css” />
+
